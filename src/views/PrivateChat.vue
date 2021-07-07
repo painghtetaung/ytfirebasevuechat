@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 <template>
   <div class="container">
     <h3 class=" text-center">Messaging</h3>
@@ -37,170 +38,32 @@
                 </div>
               </div>
             </div>
-            <div class="chat_list">
-              <div class="chat_people">
-                <div class="chat_img">
-                  <img
-                    src="https://ptetutorials.com/images/user-profile.png"
-                    alt="sunil"
-                  />
-                </div>
-                <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                  <p>
-                    Test, which is a new approach to have all solutions
-                    astrology under one roof.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="chat_list">
-              <div class="chat_people">
-                <div class="chat_img">
-                  <img
-                    src="https://ptetutorials.com/images/user-profile.png"
-                    alt="sunil"
-                  />
-                </div>
-                <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                  <p>
-                    Test, which is a new approach to have all solutions
-                    astrology under one roof.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="chat_list">
-              <div class="chat_people">
-                <div class="chat_img">
-                  <img
-                    src="https://ptetutorials.com/images/user-profile.png"
-                    alt="sunil"
-                  />
-                </div>
-                <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                  <p>
-                    Test, which is a new approach to have all solutions
-                    astrology under one roof.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="chat_list">
-              <div class="chat_people">
-                <div class="chat_img">
-                  <img
-                    src="https://ptetutorials.com/images/user-profile.png"
-                    alt="sunil"
-                  />
-                </div>
-                <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                  <p>
-                    Test, which is a new approach to have all solutions
-                    astrology under one roof.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="chat_list">
-              <div class="chat_people">
-                <div class="chat_img">
-                  <img
-                    src="https://ptetutorials.com/images/user-profile.png"
-                    alt="sunil"
-                  />
-                </div>
-                <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                  <p>
-                    Test, which is a new approach to have all solutions
-                    astrology under one roof.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="chat_list">
-              <div class="chat_people">
-                <div class="chat_img">
-                  <img
-                    src="https://ptetutorials.com/images/user-profile.png"
-                    alt="sunil"
-                  />
-                </div>
-                <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                  <p>
-                    Test, which is a new approach to have all solutions
-                    astrology under one roof.
-                  </p>
-                </div>
-              </div>
-            </div>
+            
+            
+    
           </div>
         </div>
         <div class="mesgs">
           <div class="msg_history">
-            <div class="incoming_msg">
-              <div class="incoming_msg_img">
-                <img
-                  src="https://ptetutorials.com/images/user-profile.png"
-                  alt="sunil"
-                />
-              </div>
-              <div class="received_msg">
-                <div class="received_withd_msg">
-                  <p>Test which is a new approach to have all solutions</p>
-                  <span class="time_date"> 11:01 AM | June 9</span>
+            <!-- <div :key="message.doc" v-for="message in messages">
+
+              <div :class="[message.author == authUser.displayName ? 'sent_msg' : 'received_msg']">
+                <div :class="[message.author == authUser.displayName ? '' : 'received_withd_msg']">
+                  <p>{{ message.message }}</p>
+                  <span class="time_date"> {{ message.author }} </span>
                 </div>
               </div>
-            </div>
-            <div class="outgoing_msg">
-              <div class="sent_msg">
-                <p>Test which is a new approach to have all solutions</p>
-                <span class="time_date"> 11:01 AM | June 9</span>
+            </div> -->
+
+
+             <div :key="message.doc" v-for="message in messages" :class="[message.author == authUser.displayName ? 'outgoing_msg' : 'incoming_msg']">
+              <div :class="[message.author == authUser.displayName ? 'sent_msg' : 'received_msg']">
+                <div :class="[message.author == authUser.displayName ? '' : 'received_withd_msg']">
+                  <p>{{ message.message }}</p>
+                  <span class="time_date">{{ message.author }}</span></div>
               </div>
             </div>
-            <div class="incoming_msg">
-              <div class="incoming_msg_img">
-                <img
-                  src="https://ptetutorials.com/images/user-profile.png"
-                  alt="sunil"
-                />
-              </div>
-              <div class="received_msg">
-                <div class="received_withd_msg">
-                  <p>Test, which is a new approach to have</p>
-                  <span class="time_date"> 11:01 AM | Yesterday</span>
-                </div>
-              </div>
-            </div>
-            <div class="outgoing_msg">
-              <div class="sent_msg">
-                <p>Apollo University, Delhi, India Test</p>
-                <span class="time_date"> 11:01 AM | Today</span>
-              </div>
-            </div>
-            <div class="incoming_msg">
-              <div class="incoming_msg_img">
-                <img
-                  src="https://ptetutorials.com/images/user-profile.png"
-                  alt="sunil"
-                />
-              </div>
-              <div class="received_msg">
-                <div class="received_withd_msg">
-                  <p>
-                    We work directly with our designers and suppliers, and sell
-                    direct to you, which means quality, exclusive products, at a
-                    price anyone can afford.
-                  </p>
-                  <span class="time_date"> 11:01 AM | Today</span>
-                </div>
-              </div>
-            </div>
+            
           </div>
           <div class="type_msg">
             <div class="input_msg_write">
@@ -208,10 +71,10 @@
                 type="text"
                 class="write_msg"
                 placeholder="Type a message"
+                v-model="message"
+                @keyup.enter="saveMessage"
               />
-              <button class="msg_send_btn" type="button">
-                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-              </button>
+             
             </div>
           </div>
         </div>
@@ -230,8 +93,81 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+
 export default {
   name: "PrivateChat",
+  data() {
+    return {
+      message: null,
+      messages: [],
+      authUser: {}, 
+    }
+  },
+
+  methods: {
+
+    scrollToBottom() {
+      let box = document.querySelector('.msg_history');
+        box.scrollTop=box.scrollHeight;
+    },
+
+    saveMessage() {
+      //save to firestore
+      // eslint-disable-next-line no-undef
+      db.collection('chat').add({
+        message: this.message,
+        author: this.authUser.displayName,
+        createdAt: new Date(),
+      }).then(() => {
+        this.scrollToBottom();
+      })
+
+      this.message = null
+    },
+
+    fetchMessages() {
+      // eslint-disable-next-line no-undef
+      db.collection('chat').orderBy('createdAt').onSnapshot((querySnapshot) => {
+        let allMessages = [];
+        querySnapshot.forEach(doc => {
+          // console.log(`${doc.id} => ${doc.data()}`);
+          allMessages.push(doc.data())
+        })
+        this.messages = allMessages;
+
+        
+        this.scrollToBottom();
+        
+      })
+    }
+  },
+
+  created() {
+
+    firebase.auth().onAuthStateChanged(user => {
+
+      if(user) {
+        this.authUser = user;
+      } else {
+        this.authUser = {}
+      }
+
+    })
+    this.fetchMessages();
+  },
+
+  beforeRouteEnter(to,from,next) {
+    next(vm => {
+      firebase.auth().onAuthStateChanged(user => {
+        if(user) {
+          next();
+        } else {
+          vm.$router.push('/login');
+        }
+      })
+    })
+  },
 };
 </script>
 

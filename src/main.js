@@ -6,6 +6,9 @@ import store from './store'
 import firebase from 'firebase'
 
 
+// Required for side-effects
+require("firebase/firestore");
+
 var firebaseConfig = {
     apiKey: "AIzaSyBVD1nbPcZOV1lpZ79utuaeEHLAbK700EY",
     authDomain: "vue-firestore-chat-51559.firebaseapp.com",
@@ -17,5 +20,13 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+var db = firebase.firestore();
+
+window.db = db;
+//Disable deprecated features
+db.settings({
+    timestampsInSnapShots: true
+});
 
 createApp(App).use(store).use(router).mount('#app')
